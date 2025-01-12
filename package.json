@@ -33,7 +33,7 @@
       "displayName": "Resources",
       "description": "Translation json files as example",
       "path": "Samples~/Resources"
-    },
+    }
   ],
   "author": {
     "name": "Cristian",
