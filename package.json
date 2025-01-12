@@ -10,29 +10,29 @@
  },
  "samples": [
      {
-      "displayName": "Example dialogue prefab",
+      "displayName": "DialoguePrefab",
       "description": "Prefab for canvas dialogue",
-      "path": "Samples~/DialoguePanelPrefab.prefab"
+      "path": "Samples~/Prefabs"
     },
      {
-      "displayName": "Example dialogue object",
+      "displayName": "Dialogue",
       "description": "Example of dialogue object for start a dialogue",
-      "path": "Samples~/TestDialogue.asset"
+      "path": "Samples~/Dialogues"
     },
     {
-      "displayName": "Resources",
+      "displayName": "Fonts",
       "description": "Font for canvas dialogue",
       "path": "Samples~/Fonts"
     },
     {
-      "displayName": "Resources",
+      "displayName": "Icons",
       "description": "Icons for canvas dialogue",
       "path": "Samples~/Icons"
     },
     {
-      "displayName": "Resources",
+      "displayName": "Translations",
       "description": "Translation json files as example",
-      "path": "Samples~/Resources"
+      "path": "Samples~/Translations"
     }
   ],
   "author": {
