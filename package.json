@@ -1,0 +1,42 @@
+{
+  "name": "com.CristianGOEN.SimplePSXDialogueController",
+  "version": "1.0.0",
+  "displayName": "SimplePSXDialogueController",
+  "description": "Package to manage dialogues",
+  "unity": "2022.3",
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "2.0.0",
+    "com.unity.textmeshpro": "3.0.6"
+ },
+ "samples": [
+     {
+      "displayName": "Example dialogue prefab",
+      "description": "Prefab for canvas dialogue",
+      "path": "Samples~/DialoguePanelPrefab"
+    },
+     {
+      "displayName": "Example dialogue object",
+      "description": "Example of dialogue object for start a dialogue",
+      "path": "Samples~/TestDialogue"
+    },
+    {
+      "displayName": "Resources",
+      "description": "Font for canvas dialogue",
+      "path": "Samples~/Fonts"
+    },
+    {
+      "displayName": "Resources",
+      "description": "Icons for canvas dialogue",
+      "path": "Samples~/Fonts"
+    },
+    {
+      "displayName": "Resources",
+      "description": "Translation json files as example",
+      "path": "Samples~/Resources"
+    },
+  ],
+  "author": {
+    "name": "Cristian",
+    "url": "https://github.com/CristianGOEN"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "line_1": {
+    "es": "¿Estás seguro de que deberíamos entrar aquí?",
+    "en": "Are you sure we should go in here?",
+    "de": "Bist du sicher, dass wir hier reingehen sollten?",
+    "fr": "Es-tu sûr qu'on devrait entrer ici?"
+  },
+  "line_2": {
+    "es": "No hay otra opción, tenemos que seguir adelante.",
+    "en": "There’s no other choice, we have to keep going.",
+    "de": "Es gibt keine andere Wahl, wir müssen weitergehen.",
+    "fr": "On n'a pas le choix, il faut continuer."
+  },
+  "line_3": {
+    "es": "Está demasiado oscuro, no veo nada.",
+    "en": "It’s too dark, I can’t see anything.",
+    "de": "Es ist zu dunkel, ich sehe nichts.",
+    "fr": "C'est trop sombre, je ne vois rien."
+  },
+  "line_4": {
+    "es": "Usa la linterna, debería estar en tu mochila.",
+    "en": "Use the flashlight, it should be in your backpack.",
+    "de": "Benutze die Taschenlampe, sie sollte in deinem Rucksack sein.",
+    "fr": "Utilise la lampe de poche, elle doit être dans ton sac."
+  },
+  "line_5": {
+    "es": "¡Gracias! Ahora sí podemos avanzar.",
+    "en": "Thanks! Now we can move forward.",
+    "de": "Danke! Jetzt können wir weitergehen.",
+    "fr": "Merci ! Maintenant, on peut avancer."
+  },
+  "line_6": {
+    "es": "Espero que no encontremos más obstáculos en el camino, aunque este lugar me da mala espina y siento que algo nos está observando desde las sombras.",
+    "en": "I hope we don’t encounter more obstacles along the way, though this place gives me the creeps, and I feel like something is watching us from the shadows.",
+    "de": "Ich hoffe, dass wir keine weiteren Hindernisse auf dem Weg finden, obwohl mir dieser Ort unheimlich ist und ich das Gefühl habe, dass uns etwas aus den Schatten beobachtet.",
+    "fr": "J'espère qu'on ne rencontrera pas d'autres obstacles en chemin, mais cet endroit me donne la chair de poule, et j'ai l'impression que quelque chose nous observe dans l'ombre."
+  },
+  "line_7": {
+    "es": "No puedo evitar sentir que este lugar tiene una historia oscura, como si cada pared susurrara secretos de algo terrible que ocurrió aquí hace mucho tiempo. Hay marcas en el suelo que parecen haber sido dejadas por alguien arrastrando algo pesado, y el aire tiene un olor extraño, metálico, como si el tiempo mismo hubiera decidido estancarse. ¿Crees que encontraremos lo que buscamos, o este viaje terminará siendo otro de esos cuentos que nadie creerá cuando lo contemos?",
+    "en": "I can’t shake the feeling that this place has a dark history, as if every wall whispers secrets of something terrible that happened here long ago. There are marks on the floor that look like someone dragged something heavy, and the air carries a strange, metallic smell, as if time itself decided to stagnate. Do you think we’ll find what we’re looking for, or will this journey end up being one of those stories no one believes when we tell it?",
+    "de": "Ich kann das Gefühl nicht abschütteln, dass dieser Ort eine dunkle Vergangenheit hat, als ob jede Wand Geheimnisse von etwas Schrecklichem flüstert, das hier vor langer Zeit passiert ist. Auf dem Boden gibt es Spuren, die aussehen, als hätte jemand etwas Schweres gezogen, und die Luft trägt einen seltsamen, metallischen Geruch, als ob die Zeit selbst beschlossen hätte, hier stillzustehen. Glaubst du, dass wir finden, wonach wir suchen, oder wird diese Reise am Ende eine dieser Geschichten sein, die niemand glaubt, wenn wir sie erzählen?",
+    "fr": "Je ne peux pas m'empêcher de ressentir que cet endroit a une histoire sombre, comme si chaque mur murmurait les secrets de quelque chose de terrible qui s'est passé ici il y a longtemps. Il y a des marques au sol qui ressemblent à des traces laissées par quelqu'un traînant quelque chose de lourd, et l'air a une odeur étrange, métallique, comme si le temps lui-même avait décidé de stagner. Penses-tu que nous trouverons ce que nous cherchons, ou bien ce voyage finira par être une de ces histoires que personne ne croit quand on la raconte?"
+  },
+   "line_8": {
+    "es": "¿Escuchaste eso? Sonaba como pasos, pero no hay nadie aquí.",
+    "en": "Did you hear that? It sounded like footsteps, but there's no one here.",
+    "de": "Hast du das gehört? Es klang wie Schritte, aber hier ist niemand.",
+    "fr": "Tu as entendu ça ? On aurait dit des pas, mais il n'y a personne ici."
+  },
+  "line_9": {
+    "es": "Probablemente sea solo tu imaginación. Este lugar puede hacer que escuches cosas.",
+    "en": "It’s probably just your imagination. This place can make you hear things.",
+    "de": "Es ist wahrscheinlich nur deine Fantasie. Dieser Ort kann einen dazu bringen, Dinge zu hören.",
+    "fr": "C'est probablement juste ton imagination. Cet endroit peut te faire entendre des choses."
+  },
+  "line_10": {
+    "es": "Quizás sea el viento, a veces puede sonar como pasos en lugares como este.",
+    "en": "Maybe it’s the wind, it can sometimes sound like footsteps in places like this.",
+    "de": "Vielleicht ist es der Wind, der kann manchmal wie Schritte klingen an solchen Orten.",
+    "fr": "C'est peut-être le vent, parfois il peut ressembler à des pas dans des endroits comme celui-ci."
+  },
+  "line_11": {
+    "es": "No tengo idea, pero deberíamos estar alerta por si acaso.",
+    "en": "I have no idea, but we should stay alert just in case.",
+    "de": "Ich habe keine Ahnung, aber wir sollten vorsichtig bleiben, nur für den Fall.",
+    "fr": "Je n'en ai aucune idée, mais on devrait rester sur nos gardes au cas où."
+  },
+  "line_12": {
+    "es": "Lo escuché, pero desapareció tan rápido que no estoy seguro de qué fue.",
+    "en": "I heard it, but it disappeared so quickly that I’m not sure what it was.",
+    "de": "Ich habe es gehört, aber es war so schnell weg, dass ich nicht sicher bin, was es war.",
+    "fr": "Je l'ai entendu, mais c'est parti si vite que je ne sais pas ce que c'était."
+  },
+  "line_13": {
+    "es": "Espero que tengas razón, pero no puedo sacudirme esta sensación de que algo no está bien.",
+    "en": "I hope you’re right, but I can’t shake this feeling that something’s not right.",
+    "de": "Ich hoffe, du hast recht, aber ich kann dieses Gefühl nicht abschütteln, dass etwas nicht stimmt.",
+    "fr": "J'espère que tu as raison, mais je n'arrive pas à me débarrasser de ce sentiment que quelque chose cloche."
+  }
+}
