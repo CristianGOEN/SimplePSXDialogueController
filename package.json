@@ -12,12 +12,12 @@
      {
       "displayName": "Example dialogue prefab",
       "description": "Prefab for canvas dialogue",
-      "path": "Samples~/DialoguePanelPrefab"
+      "path": "Samples~/DialoguePanelPrefab.prefab"
     },
      {
       "displayName": "Example dialogue object",
       "description": "Example of dialogue object for start a dialogue",
-      "path": "Samples~/TestDialogue"
+      "path": "Samples~/TestDialogue.asset"
     },
     {
       "displayName": "Resources",
@@ -27,7 +27,7 @@
     {
       "displayName": "Resources",
       "description": "Icons for canvas dialogue",
-      "path": "Samples~/Fonts"
+      "path": "Samples~/Icons"
     },
     {
       "displayName": "Resources",
