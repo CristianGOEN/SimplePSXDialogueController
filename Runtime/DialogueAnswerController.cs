@@ -26,7 +26,7 @@ namespace SimplePSXDialogueController
             for (int i = 0; i < paragraph.GetAnswers().Length; i++)
             {
                 answerButtons[i].gameObject.SetActive(true);
-                answerButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = TranslatioController.instance.Translate(paragraph.GetAnswers()[i].GetText());
+                answerButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = TranslationController.instance.Translate(paragraph.GetAnswers()[i].GetText());
             }
 
             //answerButtons[0].Select();

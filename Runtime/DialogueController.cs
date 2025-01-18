@@ -5,7 +5,7 @@ using TMPro;
 
 namespace SimplePSXDialogueController
 {
-    public class DialogueController : MonoBehaviour
+    public class DialogueController : DialogueControllerBase
     {
         public static bool isDialogueActive = false;
 
@@ -14,7 +14,6 @@ namespace SimplePSXDialogueController
         [SerializeField] private TextMeshProUGUI speakerText;
         [SerializeField] private GameObject dialogueContinueIcon;
         [SerializeField] private GameObject dialogueEndIcon;
-        [SerializeField] private GameObject dialoguePanelContainerUI;
         [SerializeField] private DialogueAnswerController dialogueAnswerController;
 
         [Header("Text settings")]
@@ -70,12 +69,12 @@ namespace SimplePSXDialogueController
             for (int i = 0; i < dialogue.GetParagraphs().Length; i++)
             {
                 Paragraph paragraph = dialogue.GetParagraphs()[i];
-                speakerName.text = TranslatioController.instance.Translate(paragraph.GetSpeakerName());
+                speakerName.text = TranslationController.instance.Translate(paragraph.GetSpeakerName());
                 speakerText.text = string.Empty;
                 dialogueEndIcon.SetActive(false);
                 dialogueContinueIcon.SetActive(false);
 
-                string[] textSplit = TranslatioController.instance.Translate(paragraph.GetSpeakerText()).Split(' ');
+                string[] textSplit = TranslationController.instance.Translate(paragraph.GetSpeakerText()).Split(' ');
                 isTyping = true;
 
                 foreach (var word in textSplit)
@@ -134,16 +133,6 @@ namespace SimplePSXDialogueController
             CloseDialoguePanel();
 
             yield return null;
-        }
-
-        private void CloseDialoguePanel()
-        {
-            dialoguePanelContainerUI.SetActive(false);
-        }
-
-        private void OpenDialoguePanel()
-        {
-            dialoguePanelContainerUI.SetActive(true);
         }
     }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace SimplePSXDialogueController
 {
-    public class TranslatioController : MonoBehaviour
+    public class TranslationController : MonoBehaviour
     {
         public string country; //Todo prolly move in to config environment variables
-        public static TranslatioController instance;
         private Dictionary<string, string> dataDictionary = new();
 
+        public static TranslationController instance;
         private void Awake()
         {
             if (instance == null)

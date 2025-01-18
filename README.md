@@ -15,6 +15,25 @@
 }
 ```
 
+### Timed Dialogues
+
+- A dialogue that is independant from a normal dialogue and shows on their own on a limited time (if time is nullable will get the default value set).
+- Just create a dialogue from create > Dialogue and set it as reference to send to DialogueTimedController
+
+```csharp
+{
+    DialogueTimedController.instance.StartDialogue(dialogue, 2f);
+}
+```
+
+- You can send show a random message from a dialogue too
+
+```csharp
+{
+    DialogueTimedController.instance.StartRandomDialogue(dialogue);
+}
+```
+
 ### Translations
 
 - Create a translations folder in to resources/translations.
