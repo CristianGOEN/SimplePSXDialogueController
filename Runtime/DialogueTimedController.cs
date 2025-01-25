@@ -14,6 +14,7 @@ namespace SimplePSXDialogueController
 
         [Header("Text settings")]
         public float textTimer = 2f;
+        public float secondsBetweenDialogues = 1f;
 
         public static DialogueTimedController instance;
         
@@ -32,6 +33,30 @@ namespace SimplePSXDialogueController
             DontDestroyOnLoad(instance);
         }
 
+        public void StartDialogues(Dialogues dialogues, float? timer = null)
+        {
+            if (isDialogueActive)
+            {
+                return;
+            }
+
+            StartCoroutine(DisplayDialogues(dialogues, timer ?? textTimer));
+        }
+
+        private IEnumerator DisplayDialogues(Dialogues dialogues, float timer)
+        {
+            foreach (Dialogue dialogue in dialogues)
+            {
+                isDialogueActive = true;
+
+                OpenDialoguePanel();
+
+                yield return StartCoroutine(DisplayDialogue(dialogue, timer));
+
+                yield return new WaitForSeconds(secondsBetweenDialogues);
+            }
+        }
+
         public void StartDialogue(Dialogue dialogue, float? timer = null)
         {
             if (isDialogueActive)
@@ -43,28 +68,14 @@ namespace SimplePSXDialogueController
 
             OpenDialoguePanel();
 
-            StartCoroutine(DisplayText(dialogue, timer ?? textTimer));
+            StartCoroutine(DisplayDialogue(dialogue, timer ?? textTimer));
         }
 
-        public void StartRandomDialogue(Dialogue dialogue, float? timer = null)
+        private IEnumerator DisplayDialogue(Dialogue dialogue, float timer)
         {
-            if (isDialogueActive)
+            foreach (Paragraph paragraph in dialogue.GetParagraphs())
             {
-                return;
-            }
-
-            isDialogueActive = true;
-
-            OpenDialoguePanel();
-
-            StartCoroutine(DisplayRandomText(dialogue, timer ?? textTimer));
-        }
-
-        private IEnumerator DisplayText(Dialogue dialogue, float timer)
-        {
-            for (int i = 0; i < dialogue.GetParagraphs().Length; i++)
-            {
-                speakerText.text = FormatText(dialogue.GetParagraphs()[i]);
+                speakerText.text = FormatText(paragraph);
 
                 yield return new WaitForSeconds(timer);
             }
@@ -76,17 +87,45 @@ namespace SimplePSXDialogueController
             yield return null;
         }
 
-        private IEnumerator DisplayRandomText(Dialogue dialogue, float timer)
+        public void StartRandomParagraph(Dialogue dialogue, float? timer = null)
         {
-            speakerText.text = FormatText(dialogue.GetParagraphs()[Random.Range(0, dialogue.Length())]);
+            if (isDialogueActive)
+            {
+                return;
+            }
+
+            isDialogueActive = true;
+
+            OpenDialoguePanel();
+
+            StartCoroutine(DisplayRandoParagraph(dialogue, timer ?? textTimer));
+        }
+
+        private IEnumerator DisplayRandoParagraph(Dialogue dialogue, float timer)
+        {
+            speakerText.text = FormatText(dialogue.GetRandomParagraph());
 
             yield return new WaitForSeconds(timer);
-           
+
             isDialogueActive = false;
 
             CloseDialoguePanel();
 
             yield return null;
+        }
+
+        public void StartRandomDialogue(Dialogues dialogues, float? timer = null)
+        {
+            if (isDialogueActive)
+            {
+                return;
+            }
+
+            isDialogueActive = true;
+
+            OpenDialoguePanel();
+
+            StartCoroutine(DisplayDialogue(dialogues.GetRandomDialogue(), timer ?? textTimer));
         }
 
         private string FormatText(Paragraph paragraph)

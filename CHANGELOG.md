@@ -9,3 +9,6 @@
 
 ## [1.2.0] - 2025-01-25
 - Added dialogues support
+
+## [1.2.1] - 2025-01-25
+- Added random timed dialogues and timed dialogues

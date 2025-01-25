@@ -15,7 +15,7 @@
 }
 ```
 
-- You can also group dialogues with the dialogues class
+- You can also group dialogues with the dialogues class from create > Dialogues
 
 ### Timed Dialogue
 
@@ -28,10 +28,19 @@
 }
 ```
 
-- You can send show a random message from a dialogue too
+- You can send show a random paragraph from a dialogue too
 
 ```csharp
 {
+    DialogueTimedController.instance.StartRandomParagraph(dialogue);
+}
+```
+
+- You can call a random dialogue from dialogues or normal one like that:
+
+```csharp
+{
+    DialogueTimedController.instance.StartDialogues(dialogue);
     DialogueTimedController.instance.StartRandomDialogue(dialogue);
 }
 ```
