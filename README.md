@@ -5,7 +5,7 @@
 ## Example usage
 
 
-### Dialogues
+### Dialogue
 
 - Just create a dialogue from create > Dialogue and set it as reference to send to DialogueController
 
@@ -15,7 +15,9 @@
 }
 ```
 
-### Timed Dialogues
+- You can also group dialogues with the dialogues class
+
+### Timed Dialogue
 
 - A dialogue that is independant from a normal dialogue and shows on their own on a limited time (if time is nullable will get the default value set).
 - Just create a dialogue from create > Dialogue and set it as reference to send to DialogueTimedController

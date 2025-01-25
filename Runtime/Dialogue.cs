@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace SimplePSXDialogueController
 {
-    [CreateAssetMenu(fileName = "New Dialogue")]
+    [CreateAssetMenu(fileName = "New Dialogue", menuName = "SimplePSXDialogueController/Dialogue")]
     public class Dialogue : ScriptableObject
     {
         [SerializeField] private Paragraph[] paragraphs;
