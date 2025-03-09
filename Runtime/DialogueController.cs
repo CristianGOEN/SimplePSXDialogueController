@@ -25,11 +25,8 @@ namespace SimplePSXDialogueController
 
         public static DialogueController instance;
 
-        public delegate void OnDialogueStart();
-        public static event OnDialogueStart onDialogueStart;
-
-        public delegate void OnDialogueEnd();
-        public static event OnDialogueEnd onDialogueEnd;
+        public static event System.Action<GameObject> onDialogueStart;
+        public static event System.Action<GameObject> onDialogueEnd;
 
         private void Awake()
         {
@@ -57,7 +54,7 @@ namespace SimplePSXDialogueController
 
             OpenDialoguePanel();
 
-            onDialogueStart?.Invoke();
+            onDialogueStart?.Invoke(this.gameObject);
 
             StartCoroutine(DisplayText(dialogue));
         }
@@ -140,7 +137,7 @@ namespace SimplePSXDialogueController
 
             CloseDialoguePanel();
 
-            onDialogueEnd?.Invoke();
+            onDialogueEnd?.Invoke(this.gameObject);
 
             yield return null;
         }
