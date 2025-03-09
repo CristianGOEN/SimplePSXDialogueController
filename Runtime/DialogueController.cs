@@ -43,7 +43,7 @@ namespace SimplePSXDialogueController
             DontDestroyOnLoad(instance);
         }
 
-        public void StartDialogue(Dialogue dialogue)
+        public void StartDialogue(Dialogue dialogue, GameObject objReference)
         {
             if (isDialogueActive)
             {
@@ -54,9 +54,9 @@ namespace SimplePSXDialogueController
 
             OpenDialoguePanel();
 
-            onDialogueStart?.Invoke(this.gameObject);
+            onDialogueStart?.Invoke(objReference);
 
-            StartCoroutine(DisplayText(dialogue));
+            StartCoroutine(DisplayText(dialogue, objReference));
         }
 
         private void Update()
@@ -67,7 +67,7 @@ namespace SimplePSXDialogueController
             }
         }
 
-        private IEnumerator DisplayText(Dialogue dialogue)
+        private IEnumerator DisplayText(Dialogue dialogue, GameObject objReference)
         {
             currentTextSpeed = textSpeed;
 
@@ -137,7 +137,7 @@ namespace SimplePSXDialogueController
 
             CloseDialoguePanel();
 
-            onDialogueEnd?.Invoke(this.gameObject);
+            onDialogueEnd?.Invoke(objReference);
 
             yield return null;
         }
