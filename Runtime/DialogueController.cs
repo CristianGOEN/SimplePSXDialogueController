@@ -43,7 +43,7 @@ namespace SimplePSXDialogueController
             DontDestroyOnLoad(instance);
         }
 
-        public void StartDialogue(Dialogue dialogue, GameObject objReference)
+        public void StartDialogue(Dialogue dialogue, GameObject objReference = null)
         {
             if (isDialogueActive)
             {
