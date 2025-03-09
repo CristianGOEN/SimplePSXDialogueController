@@ -25,6 +25,12 @@ namespace SimplePSXDialogueController
 
         public static DialogueController instance;
 
+        public delegate void OnDialogueStart();
+        public static event OnDialogueStart onDialogueStart;
+
+        public delegate void OnDialogueEnd();
+        public static event OnDialogueEnd onDialogueEnd;
+
         private void Awake()
         {
             if (instance == null)
@@ -50,6 +56,8 @@ namespace SimplePSXDialogueController
             isDialogueActive = true;
 
             OpenDialoguePanel();
+
+            onDialogueStart?.Invoke();
 
             StartCoroutine(DisplayText(dialogue));
         }
@@ -131,6 +139,8 @@ namespace SimplePSXDialogueController
             isDialogueActive = false;
 
             CloseDialoguePanel();
+
+            onDialogueEnd?.Invoke();
 
             yield return null;
         }

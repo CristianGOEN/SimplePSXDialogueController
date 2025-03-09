@@ -12,3 +12,6 @@
 
 ## [1.2.1] - 2025-01-25
 - Added random timed dialogues and timed dialogues
+
+## [1.2.2] - 2025-03-09
+- Added (onDialogueStart) and (onDialogueEnd) to track start and ending of dialogues

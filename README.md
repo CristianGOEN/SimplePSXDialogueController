@@ -17,6 +17,9 @@
 
 - You can also group dialogues with the dialogues class from create > Dialogues
 
+- There are two events to track when a dialogue starts (onDialogueStart) or ends (onDialogueEnd):
+
+
 ### Timed Dialogue
 
 - A dialogue that is independant from a normal dialogue and shows on their own on a limited time (if time is nullable will get the default value set).
