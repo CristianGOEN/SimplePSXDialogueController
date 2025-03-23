@@ -15,3 +15,6 @@
 
 ## [1.2.2] - 2025-03-09
 - Added (onDialogueStart) and (onDialogueEnd) to track start and ending of dialogues
+
+## [1.2.3] - 2025-03-23
+- Added random dialogue on dialogue controller

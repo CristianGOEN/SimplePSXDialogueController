@@ -98,10 +98,10 @@ namespace SimplePSXDialogueController
 
             OpenDialoguePanel();
 
-            StartCoroutine(DisplayRandoParagraph(dialogue, timer ?? textTimer));
+            StartCoroutine(DisplayRandomParagraph(dialogue, timer ?? textTimer));
         }
 
-        private IEnumerator DisplayRandoParagraph(Dialogue dialogue, float timer)
+        private IEnumerator DisplayRandomParagraph(Dialogue dialogue, float timer)
         {
             speakerText.text = FormatText(dialogue.GetRandomParagraph());
 

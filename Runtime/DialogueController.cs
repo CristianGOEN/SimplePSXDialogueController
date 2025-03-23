@@ -59,6 +59,22 @@ namespace SimplePSXDialogueController
             StartCoroutine(DisplayText(dialogue, objReference));
         }
 
+        public void StartRandomDialogue(Dialogues dialogues, GameObject objReference = null)
+        {
+            if (isDialogueActive)
+            {
+                return;
+            }
+
+            isDialogueActive = true;
+
+            OpenDialoguePanel();
+
+            onDialogueStart?.Invoke(objReference);
+
+            StartCoroutine(DisplayText(dialogues.GetRandomDialogue(), objReference));
+        }
+
         private void Update()
         {
             if (Input.GetButtonDown("Jump") && isTyping && isDialogueActive && currentTextSpeed != 0)

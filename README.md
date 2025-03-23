@@ -12,6 +12,7 @@
 ```csharp
 {
     DialogueController.instance.StartDialogue(dialogue);
+    DialogueController.instance.StartRandomDialogue(dialogue);
 }
 ```
 
