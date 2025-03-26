@@ -78,3 +78,8 @@
     TranslatioController.instance.Translate("player_1");
 }
 ```
+
+### Timeline
+
+- You can add dialogues to timeline by just right clicking your timeline and adding a Dialogue track
+- For this to work just use the DialogueTimelineController script

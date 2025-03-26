@@ -18,3 +18,7 @@
 
 ## [1.2.3] - 2025-03-23
 - Added random dialogue on dialogue controller
+
+## [1.2.4] - 2025-03-26
+- DialogueTimeLineController
+- Added dialogue clips for timeline
