@@ -28,6 +28,8 @@ namespace SimplePSXDialogueController
         public static event System.Action<GameObject> onDialogueStart;
         public static event System.Action<GameObject> onDialogueEnd;
 
+        public static event System.Action<string> onAnswerSelected;
+
         private void Awake()
         {
             if (instance == null)
@@ -131,6 +133,7 @@ namespace SimplePSXDialogueController
                     {
                         i = dialogue.GetIndexParagraphByKey(paragraph.GetAnswers()[selectedAnswer].GetParagraphIndex()) - 1;
                         answerReceived = true;
+                        onAnswerSelected?.Invoke(paragraph.GetAnswers()[selectedAnswer].GetText());
                     });
 
                     yield return new WaitUntil(() => answerReceived);

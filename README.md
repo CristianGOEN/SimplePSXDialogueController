@@ -19,6 +19,7 @@
 - You can also group dialogues with the dialogues class from create > Dialogues
 
 - There are two events to track when a dialogue starts (onDialogueStart) or ends (onDialogueEnd):
+- You can also track the answer clicked with the event onAnswerSelected
 
 
 ### Timed Dialogue

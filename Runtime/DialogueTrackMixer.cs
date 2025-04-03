@@ -26,7 +26,6 @@ namespace SimplePSXDialogueController
 
             for (int i = 0; i < playable.GetInputCount(); i++)
             {
-                Debug.Log(playable.GetInputCount());
                 float inputWeight = playable.GetInputWeight(i);
 
                 if (inputWeight > 0f)

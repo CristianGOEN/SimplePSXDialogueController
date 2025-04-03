@@ -22,3 +22,6 @@
 ## [1.2.4] - 2025-03-26
 - DialogueTimeLineController
 - Added dialogue clips for timeline
+
+## [1.2.5] - 2025-04-03
+- Added (onAnswerSelected) to track selected answer
