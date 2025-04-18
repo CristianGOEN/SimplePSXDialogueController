@@ -61,8 +61,3 @@ MonoBehaviour:
     - text: line_12
       dialogueToJump: {fileID: 0}
     id: 
-  - speakerName: player_1
-    speakerText: line_13
-    isQuestion: 0
-    answers: []
-    id: 

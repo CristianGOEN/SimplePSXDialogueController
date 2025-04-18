@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paragraphs:
   - speakerName: player_1
-    speakerText: line_13
+    speakerText: 1232311aaaa
+    isQuestion: 0
+    answers: []
+    id: 
+  - speakerName: player_1
+    speakerText: 12123123123
     isQuestion: 0
     answers: []
     id: 

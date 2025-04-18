@@ -18,3 +18,13 @@ MonoBehaviour:
     isQuestion: 0
     answers: []
     id: 
+  - speakerName: player_1
+    speakerText: xxxxx
+    isQuestion: 0
+    answers: []
+    id: 
+  - speakerName: player_1
+    speakerText: asdasdasdasd
+    isQuestion: 0
+    answers: []
+    id: 
