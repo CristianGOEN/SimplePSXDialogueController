@@ -88,6 +88,7 @@ namespace SimplePSXDialogueController
         private IEnumerator DisplayText(Dialogue dialogue, GameObject objReference)
         {
             currentTextSpeed = textSpeed;
+            Dialogue dialogueToJump = null;
 
             for (int i = 0; i < dialogue.GetParagraphs().Length; i++)
             {
@@ -131,12 +132,7 @@ namespace SimplePSXDialogueController
 
                     dialogueAnswerController.StartQuestion(paragraph, (selectedAnswer) =>
                     {
-                        Dialogue dialogueToJump = paragraph.GetAnswers()[selectedAnswer].GetDialogueToJump();
-                        if (dialogueToJump)
-                        {
-                            StartCoroutine(DisplayText(dialogueToJump, objReference));
-                        }
-
+                        dialogueToJump = paragraph.GetAnswers()[selectedAnswer].GetDialogueToJump();
                         answerReceived = true;
                         onAnswerSelected?.Invoke(paragraph.GetAnswers()[selectedAnswer].GetText());
                     });
@@ -145,16 +141,15 @@ namespace SimplePSXDialogueController
                     continue;
                 }
 
-                if (i >= dialogue.GetParagraphs().Length - 1)
-                {
-                    dialogueEndIcon.SetActive(true);
-                }
-                else
-                {
-                    dialogueContinueIcon.SetActive(true);
-                }
+                ShowDialogueButtons(i, dialogue);
 
                 yield return new WaitUntil(() => Input.GetButtonDown("Jump"));
+            }
+
+            if (dialogueToJump)
+            {
+                StartCoroutine(DisplayText(dialogueToJump, objReference));
+                yield return null;
             }
 
             isDialogueActive = false;
@@ -164,6 +159,18 @@ namespace SimplePSXDialogueController
             onDialogueEnd?.Invoke(objReference);
 
             yield return null;
+        }
+
+        private void ShowDialogueButtons(int index, Dialogue currentDialogue)
+        {
+            if (index >= currentDialogue.GetParagraphs().Length - 1)
+            {
+                dialogueEndIcon.SetActive(true);
+
+                return;
+            }
+
+            dialogueContinueIcon.SetActive(true);
         }
     }
 }
