@@ -25,3 +25,6 @@
 
 ## [1.2.5] - 2025-04-03
 - Added (onAnswerSelected) to track selected answer
+
+## [1.2.6] - 2025-04-18
+- Added new dialogue tree for answers

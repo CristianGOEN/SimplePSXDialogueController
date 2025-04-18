@@ -131,7 +131,12 @@ namespace SimplePSXDialogueController
 
                     dialogueAnswerController.StartQuestion(paragraph, (selectedAnswer) =>
                     {
-                        i = dialogue.GetIndexParagraphByKey(paragraph.GetAnswers()[selectedAnswer].GetParagraphIndex()) - 1;
+                        Dialogue dialogueToJump = paragraph.GetAnswers()[selectedAnswer].GetDialogueToJump();
+                        if (dialogueToJump)
+                        {
+                            StartCoroutine(DisplayText(dialogueToJump, objReference));
+                        }
+
                         answerReceived = true;
                         onAnswerSelected?.Invoke(paragraph.GetAnswers()[selectedAnswer].GetText());
                     });

@@ -53,13 +53,13 @@ MonoBehaviour:
     isQuestion: 1
     answers:
     - text: line_9
-      paragraphIndexToJump: line_1
+      dialogueToJump: {fileID: 11400000, guid: 4a31083e8acad6746bbef1f5822edaac, type: 2}
     - text: line_10
-      paragraphIndexToJump: line_2
+      dialogueToJump: {fileID: 11400000, guid: 40df57cc7d999054889b68eb5fbfbb1b, type: 2}
     - text: line_11
-      paragraphIndexToJump: line_3
+      dialogueToJump: {fileID: 0}
     - text: line_12
-      paragraphIndexToJump: line_13
+      dialogueToJump: {fileID: 0}
     id: 
   - speakerName: player_1
     speakerText: line_13

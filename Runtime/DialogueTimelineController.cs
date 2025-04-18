@@ -10,7 +10,7 @@ namespace SimplePSXDialogueController
         [SerializeField] private TextMeshProUGUI speakerName;
         [SerializeField] private TextMeshProUGUI speakerText;
         [SerializeField] private GameObject container;
-        private int currentIndex = 999;
+        private int currentIndex = -1;
         public float textSpeed = 0.1f;
         private Coroutine typeDialogueCoroutine = null;
 
@@ -75,7 +75,7 @@ namespace SimplePSXDialogueController
             container.SetActive(false);
             speakerName.text = string.Empty;
             speakerText.text = string.Empty;
-            currentIndex = 999;
+            currentIndex = -1;
         }
     }
 }

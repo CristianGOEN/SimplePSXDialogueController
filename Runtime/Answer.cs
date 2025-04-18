@@ -6,16 +6,16 @@ namespace SimplePSXDialogueController
     public class Answer
     {
         [SerializeField] private string text;
-        [SerializeField] private string paragraphIndexToJump;
+        [SerializeField] private Dialogue dialogueToJump;
 
         public string GetText()
         {
             return text;
         }
 
-        public string GetParagraphIndex()
+        public Dialogue GetDialogueToJump()
         {
-            return paragraphIndexToJump;
+            return dialogueToJump;
         }
     }
 }
