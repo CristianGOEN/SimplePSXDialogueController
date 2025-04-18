@@ -145,16 +145,12 @@ namespace SimplePSXDialogueController
 
                 yield return new WaitUntil(() => Input.GetButtonDown("Jump"));
             }
-            Debug.Log("elige respuesta");
 
             if (dialogueToJump)
             {
-                Debug.Log("empieza nuevo dialogo");
                 StartCoroutine(DisplayText(dialogueToJump, objReference));
-                Debug.Log("salta nuevo dialogo");
                 yield break;
             }
-            Debug.Log("termina dialogo");
 
             isDialogueActive = false;
 
