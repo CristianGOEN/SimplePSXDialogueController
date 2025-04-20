@@ -19,12 +19,15 @@
 ## [1.2.3] - 2025-03-23
 - Added random dialogue on dialogue controller
 
-## [1.2.4] - 2025-03-26
+## [1.3] - 2025-03-26
 - DialogueTimeLineController
 - Added dialogue clips for timeline
 
-## [1.2.5] - 2025-04-03
+## [1.3.1] - 2025-04-03
 - Added (onAnswerSelected) to track selected answer
 
-## [1.2.6] - 2025-04-18
+## [1.3.2] - 2025-04-18
 - Added new dialogue tree for answers
+
+## [1.3.2] - 2025-04-20
+- Added (onParagraphStart) and (onParagraphEnd) to track start and ending of paragraphs

@@ -27,7 +27,8 @@ namespace SimplePSXDialogueController
 
         public static event System.Action<GameObject> onDialogueStart;
         public static event System.Action<GameObject> onDialogueEnd;
-
+        public static event System.Action<GameObject> onParagraphStart;
+        public static event System.Action<GameObject> onParagraphEnd;
         public static event System.Action<string> onAnswerSelected;
 
         private void Awake()
@@ -92,6 +93,8 @@ namespace SimplePSXDialogueController
 
             for (int i = 0; i < dialogue.GetParagraphs().Length; i++)
             {
+                onParagraphStart?.Invoke(objReference);
+
                 Paragraph paragraph = dialogue.GetParagraphs()[i];
                 speakerName.text = TranslationController.instance.Translate(paragraph.GetSpeakerName());
                 speakerText.text = string.Empty;
@@ -144,6 +147,8 @@ namespace SimplePSXDialogueController
                 ShowDialogueButtons(i, dialogue);
 
                 yield return new WaitUntil(() => Input.GetButtonDown("Jump"));
+
+                onParagraphEnd?.Invoke(objReference);
             }
 
             if (dialogueToJump)

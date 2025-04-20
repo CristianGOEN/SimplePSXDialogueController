@@ -1,6 +1,6 @@
 {
   "name": "com.cristiangoen.simplepsxdialoguecontroller",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "displayName": "SimplePSXDialogueController",
   "description": "Package to manage dialogues",
   "unity": "2022.3",
