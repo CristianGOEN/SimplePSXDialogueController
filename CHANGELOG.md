@@ -31,3 +31,6 @@
 
 ## [1.3.2] - 2025-04-20
 - Added (onParagraphStart) and (onParagraphEnd) to track start and ending of paragraphs
+
+## [1.3.3] - 2025-05-05
+- Changed how events reference, now uses dialogue or string key instead of gameObjects

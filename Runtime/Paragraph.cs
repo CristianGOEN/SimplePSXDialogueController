@@ -9,7 +9,6 @@ namespace SimplePSXDialogueController
         [SerializeField] private string speakerText;
         [SerializeField] private bool isQuestion = false;
         [SerializeField] private Answer[] answers;
-        [SerializeField] private string id;
 
         public string GetSpeakerName()
         {
@@ -29,10 +28,6 @@ namespace SimplePSXDialogueController
         public Answer[] GetAnswers()
         {
             return answers;
-        }
-        public string GetId()
-        {
-            return id;
         }
     }
 }

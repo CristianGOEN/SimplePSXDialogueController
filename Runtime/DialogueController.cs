@@ -25,10 +25,10 @@ namespace SimplePSXDialogueController
 
         public static DialogueController instance;
 
-        public static event System.Action<GameObject> onDialogueStart;
-        public static event System.Action<GameObject> onDialogueEnd;
-        public static event System.Action<GameObject> onParagraphStart;
-        public static event System.Action<GameObject> onParagraphEnd;
+        public static event System.Action<Dialogue> onDialogueStart;
+        public static event System.Action<Dialogue> onDialogueEnd;
+        public static event System.Action<string> onParagraphStart;
+        public static event System.Action<string> onParagraphEnd;
         public static event System.Action<string> onAnswerSelected;
 
         private void Awake()
@@ -46,7 +46,7 @@ namespace SimplePSXDialogueController
             DontDestroyOnLoad(instance);
         }
 
-        public void StartDialogue(Dialogue dialogue, GameObject objReference = null)
+        public void StartDialogue(Dialogue dialogue)
         {
             if (isDialogueActive)
             {
@@ -57,12 +57,10 @@ namespace SimplePSXDialogueController
 
             OpenDialoguePanel();
 
-            onDialogueStart?.Invoke(objReference);
-
-            StartCoroutine(DisplayText(dialogue, objReference));
+            StartCoroutine(DisplayText(dialogue));
         }
 
-        public void StartRandomDialogue(Dialogues dialogues, GameObject objReference = null)
+        public void StartRandomDialogue(Dialogues dialogues)
         {
             if (isDialogueActive)
             {
@@ -73,9 +71,7 @@ namespace SimplePSXDialogueController
 
             OpenDialoguePanel();
 
-            onDialogueStart?.Invoke(objReference);
-
-            StartCoroutine(DisplayText(dialogues.GetRandomDialogue(), objReference));
+            StartCoroutine(DisplayText(dialogues.GetRandomDialogue()));
         }
 
         private void Update()
@@ -86,15 +82,15 @@ namespace SimplePSXDialogueController
             }
         }
 
-        private IEnumerator DisplayText(Dialogue dialogue, GameObject objReference)
+        private IEnumerator DisplayText(Dialogue dialogue)
         {
+            onDialogueStart?.Invoke(dialogue);
+
             currentTextSpeed = textSpeed;
             Dialogue dialogueToJump = null;
 
             for (int i = 0; i < dialogue.GetParagraphs().Length; i++)
             {
-                onParagraphStart?.Invoke(objReference);
-
                 Paragraph paragraph = dialogue.GetParagraphs()[i];
                 speakerName.text = TranslationController.instance.Translate(paragraph.GetSpeakerName());
                 speakerText.text = string.Empty;
@@ -103,6 +99,8 @@ namespace SimplePSXDialogueController
 
                 string[] textSplit = TranslationController.instance.Translate(paragraph.GetSpeakerText()).Split(' ');
                 isTyping = true;
+
+                onParagraphStart?.Invoke(paragraph.GetSpeakerText());
 
                 foreach (var word in textSplit)
                 {
@@ -148,12 +146,12 @@ namespace SimplePSXDialogueController
 
                 yield return new WaitUntil(() => Input.GetButtonDown("Jump"));
 
-                onParagraphEnd?.Invoke(objReference);
+                onParagraphEnd?.Invoke(paragraph.GetSpeakerText());
             }
 
             if (dialogueToJump)
             {
-                StartCoroutine(DisplayText(dialogueToJump, objReference));
+                StartCoroutine(DisplayText(dialogueToJump));
                 yield break;
             }
 
@@ -161,7 +159,7 @@ namespace SimplePSXDialogueController
 
             CloseDialoguePanel();
 
-            onDialogueEnd?.Invoke(objReference);
+            onDialogueEnd?.Invoke(dialogue);
 
             yield return null;
         }
