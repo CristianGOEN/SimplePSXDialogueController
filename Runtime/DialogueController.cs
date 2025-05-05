@@ -27,8 +27,8 @@ namespace SimplePSXDialogueController
 
         public static event System.Action<Dialogue> onDialogueStart;
         public static event System.Action<Dialogue> onDialogueEnd;
-        public static event System.Action<string> onParagraphStart;
-        public static event System.Action<string> onParagraphEnd;
+        public static event System.Action<Paragraph> onParagraphStart;
+        public static event System.Action<Paragraph> onParagraphEnd;
         public static event System.Action<string> onAnswerSelected;
 
         private void Awake()
@@ -100,7 +100,7 @@ namespace SimplePSXDialogueController
                 string[] textSplit = TranslationController.instance.Translate(paragraph.GetSpeakerText()).Split(' ');
                 isTyping = true;
 
-                onParagraphStart?.Invoke(paragraph.GetSpeakerText());
+                onParagraphStart?.Invoke(paragraph);
 
                 foreach (var word in textSplit)
                 {
@@ -146,7 +146,7 @@ namespace SimplePSXDialogueController
 
                 yield return new WaitUntil(() => Input.GetButtonDown("Jump"));
 
-                onParagraphEnd?.Invoke(paragraph.GetSpeakerText());
+                onParagraphEnd?.Invoke(paragraph);
             }
 
             if (dialogueToJump)
