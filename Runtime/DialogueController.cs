@@ -33,6 +33,7 @@ namespace SimplePSXDialogueController
 
         private void Awake()
         {
+            /*
             if (instance == null)
             {
                 instance = this;
@@ -44,10 +45,12 @@ namespace SimplePSXDialogueController
             }
 
             DontDestroyOnLoad(instance);
+            */
         }
 
         public void StartDialogue(Dialogue dialogue)
         {
+            /*
             if (isDialogueActive)
             {
                 return;
@@ -58,10 +61,12 @@ namespace SimplePSXDialogueController
             OpenDialoguePanel();
 
             StartCoroutine(DisplayText(dialogue));
+            */
         }
 
         public void StartRandomDialogue(Dialogues dialogues)
         {
+            /*
             if (isDialogueActive)
             {
                 return;
@@ -72,18 +77,22 @@ namespace SimplePSXDialogueController
             OpenDialoguePanel();
 
             StartCoroutine(DisplayText(dialogues.GetRandomDialogue()));
+            */
         }
 
         private void Update()
         {
+            /*
             if (Input.GetButtonDown("Jump") && isTyping && isDialogueActive && currentTextSpeed != 0)
             {
                 currentTextSpeed = 0;
             }
+            */
         }
 
         private IEnumerator DisplayText(Dialogue dialogue)
         {
+            /*
             onDialogueStart?.Invoke(dialogue);
 
             currentTextSpeed = textSpeed;
@@ -160,12 +169,14 @@ namespace SimplePSXDialogueController
             CloseDialoguePanel();
 
             onDialogueEnd?.Invoke(dialogue);
-
+            */
             yield return null;
+            
         }
 
         private void ShowDialogueButtons(int index, Dialogue currentDialogue)
         {
+           /*
             if (index >= currentDialogue.GetParagraphs().Length - 1)
             {
                 dialogueEndIcon.SetActive(true);
@@ -174,6 +185,7 @@ namespace SimplePSXDialogueController
             }
 
             dialogueContinueIcon.SetActive(true);
+           */
         }
     }
 }
