@@ -92,7 +92,6 @@ namespace SimplePSXDialogueController
 
         private IEnumerator DisplayText(Dialogue dialogue)
         {
-            /*
             onDialogueStart?.Invoke(dialogue);
 
             currentTextSpeed = textSpeed;
@@ -169,14 +168,12 @@ namespace SimplePSXDialogueController
             CloseDialoguePanel();
 
             onDialogueEnd?.Invoke(dialogue);
-            */
+
             yield return null;
-            
         }
 
         private void ShowDialogueButtons(int index, Dialogue currentDialogue)
         {
-           /*
             if (index >= currentDialogue.GetParagraphs().Length - 1)
             {
                 dialogueEndIcon.SetActive(true);
@@ -185,7 +182,6 @@ namespace SimplePSXDialogueController
             }
 
             dialogueContinueIcon.SetActive(true);
-           */
         }
     }
 }
