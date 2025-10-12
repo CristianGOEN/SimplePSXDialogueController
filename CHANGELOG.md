@@ -34,3 +34,6 @@
 
 ## [1.3.3] - 2025-05-05
 - Changed how events reference, now uses dialogue or string key instead of gameObjects
+
+## [1.3.4] - 2025-10-12
+- Added (onParagraphStart) and (onParagraphEnd) to track start and ending of paragraphs in timeLine

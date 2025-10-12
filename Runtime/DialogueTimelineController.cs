@@ -15,6 +15,9 @@ namespace SimplePSXDialogueController
         private Coroutine typeDialogueCoroutine = null;
 
         public static DialogueTimelineController instance;
+        public static event System.Action<Paragraph> onParagraphStart;
+        public static event System.Action<Paragraph> onParagraphEnd;
+
         private void Awake()
         {
             if (instance == null)
@@ -53,6 +56,8 @@ namespace SimplePSXDialogueController
 
         IEnumerator DisplayText(Paragraph paragraph)
         {
+            onParagraphStart?.Invoke(paragraph);
+
             speakerName.text = TranslationController.instance.Translate(paragraph.GetSpeakerName());
             speakerText.text = string.Empty;
 
@@ -65,6 +70,8 @@ namespace SimplePSXDialogueController
 
                 yield return new WaitForSeconds(textSpeed);
             }
+
+            onParagraphEnd?.Invoke(paragraph);
 
             typeDialogueCoroutine = null;
             yield return null;
