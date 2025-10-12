@@ -9,6 +9,8 @@ namespace SimplePSXDialogueController
     {
         [SerializeField] private TextMeshProUGUI speakerName;
         [SerializeField] private TextMeshProUGUI speakerText;
+        [SerializeField] private GameObject dialogueContinueIcon;
+        [SerializeField] private GameObject dialogueEndIcon;
         [SerializeField] private GameObject container;
         private int currentIndex = -1;
         public float textSpeed = 0.1f;
@@ -60,6 +62,8 @@ namespace SimplePSXDialogueController
 
             speakerName.text = TranslationController.instance.Translate(paragraph.GetSpeakerName());
             speakerText.text = string.Empty;
+            dialogueEndIcon.SetActive(false);
+            dialogueContinueIcon.SetActive(false);
 
             string[] textSplit = TranslationController.instance.Translate(paragraph.GetSpeakerText()).Split(' ');
 
