@@ -18,15 +18,24 @@ namespace SimplePSXDialogueController
                 answerButton.gameObject.SetActive(false);
             }
 
-            if (paragraph.GetAnswers().Length < 1)
+            if (paragraph.GetAnswers().Length <= 0)
             {
                 return;
             }
 
             for (int i = 0; i < paragraph.GetAnswers().Length; i++)
             {
-                answerButtons[i].gameObject.SetActive(true);
                 answerButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = TranslationController.instance.Translate(paragraph.GetAnswers()[i].GetText());
+                answerButtons[i].gameObject.SetActive(true);
+
+                if (paragraph.GetAnswers()[i].IsDisabled())
+                {
+                    answerButtons[i].interactable = false;
+
+                    continue;
+                }
+
+                answerButtons[i].interactable = true;
             }
 
             //answerButtons[0].Select();

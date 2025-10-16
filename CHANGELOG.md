@@ -37,3 +37,6 @@
 
 ## [1.3.4] - 2025-10-12
 - Added (onParagraphStart) and (onParagraphEnd) to track start and ending of paragraphs in timeLine
+
+## [1.3.5] - 2025-10-17
+- Added possibility to disable or enable answers
