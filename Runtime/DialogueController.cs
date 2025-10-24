@@ -42,8 +42,6 @@ namespace SimplePSXDialogueController
                 Destroy(instance);
                 return;
             }
-
-            DontDestroyOnLoad(instance);
         }
 
         public void StartDialogue(Dialogue dialogue)

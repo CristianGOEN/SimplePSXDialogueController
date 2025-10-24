@@ -17,20 +17,18 @@ namespace SimplePSXDialogueController
         public float secondsBetweenDialogues = 1f;
 
         public static DialogueTimedController instance;
-        
+
         private void Awake()
         {
             if (instance == null)
             {
                 instance = this;
+                DontDestroyOnLoad(gameObject);
             }
             else
             {
-                Destroy(instance);
-                return;
+                Destroy(gameObject);
             }
-
-            DontDestroyOnLoad(instance);
         }
 
         public void StartDialogues(Dialogues dialogues, float? timer = null)

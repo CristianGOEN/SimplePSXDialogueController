@@ -31,8 +31,6 @@ namespace SimplePSXDialogueController
                 Destroy(gameObject);
                 return;
             }
-
-            DontDestroyOnLoad(gameObject);
         }
 
         public void StartDialogue(Paragraph paragraph, int index)

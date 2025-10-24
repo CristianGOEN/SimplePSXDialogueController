@@ -10,19 +10,20 @@ namespace SimplePSXDialogueController
         private Dictionary<string, string> dataDictionary = new();
 
         public static TranslationController instance;
+
         private void Awake()
         {
             if (instance == null)
             {
                 instance = this;
+                DontDestroyOnLoad(gameObject);
             }
             else
             {
-                Destroy(instance);
+                Destroy(gameObject);
+
                 return;
             }
-
-            DontDestroyOnLoad(instance);
 
             LoadDictionaries();
         }
