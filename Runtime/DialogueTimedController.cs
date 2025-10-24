@@ -23,7 +23,6 @@ namespace SimplePSXDialogueController
             if (instance == null)
             {
                 instance = this;
-                DontDestroyOnLoad(gameObject);
             }
             else
             {
