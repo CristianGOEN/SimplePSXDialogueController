@@ -36,6 +36,7 @@ namespace SimplePSXDialogueController
             if (instance == null)
             {
                 instance = this;
+                isDialogueActive = false;
             }
             else
             {

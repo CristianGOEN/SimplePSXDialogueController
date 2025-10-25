@@ -11,6 +11,14 @@ namespace SimplePSXDialogueController
 
         private System.Action<int> onAnswerSelected;
 
+        private void Start()
+        {
+            for (int i = 0; i < answerButtons.Length; i++)
+            {
+                answerButtons[i].onClick.AddListener(delegate { AnswereClicked(i); });
+            }            
+        }
+
         public void StartQuestion(Paragraph paragraph, System.Action<int> callback)
         {
             foreach (var answerButton in answerButtons)
