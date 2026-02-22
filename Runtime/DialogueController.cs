@@ -66,7 +66,7 @@ namespace SimplePSXDialogueController
 
         public void StartRandomDialogue(Dialogues dialogues)
         {
-            if (!dialogue)
+            if (!dialogues)
             {
                 return;
             }
