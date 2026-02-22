@@ -47,6 +47,11 @@ namespace SimplePSXDialogueController
 
         public void StartDialogue(Dialogue dialogue)
         {
+            if (!dialogue)
+            {
+                return;
+            }
+            
             if (isDialogueActive)
             {
                 return;
@@ -61,6 +66,11 @@ namespace SimplePSXDialogueController
 
         public void StartRandomDialogue(Dialogues dialogues)
         {
+            if (!dialogue)
+            {
+                return;
+            }
+            
             if (isDialogueActive)
             {
                 return;
@@ -106,7 +116,7 @@ namespace SimplePSXDialogueController
                     string temporalText = speakerText.text;
                     speakerText.text += word + ' ';
 
-                    //Si el paragrafo es más largo que la caja lo parte en dos
+                    //Si el paragrafo es mï¿½s largo que la caja lo parte en dos
                     if (speakerText.preferredHeight > textHeightBox)
                     {
                         speakerText.text = temporalText;
